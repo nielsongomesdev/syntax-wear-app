@@ -31,7 +31,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(/fonts/ubuntu-medium-500.woff2) format('woff2'),
+  src: url(../assets/fonts/ubuntu-medium-500.woff2) format('woff2');
 }
 
 @font-face {
@@ -39,10 +39,10 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(/fonts/ubuntu-regular-400.woff2) format('woff2'),
+  src: url(../assets/fonts/ubuntu-regular-400.woff2) format('woff2');
 }
 
-@utility {
+@utility container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 10px;

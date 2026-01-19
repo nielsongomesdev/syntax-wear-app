@@ -33,13 +33,19 @@ export const Header = () => {
                 <a href="#">Sobre</a>
               </li>
               <li>
-                <a href="#"><img src={IconUser} alt="Ícone de login" /></a>
+                <a href="#">
+                  <img src={IconUser} alt="Ícone de login" />
+                </a>
               </li>
               <li>
-                <a href="#"><img src={IconAbout} alt="Ícone de sobre" /></a>
+                <a href="#">
+                  <img src={IconAbout} alt="Ícone de sobre" />
+                </a>
               </li>
               <li>
-                <a href="#"><img src={IconCart} alt="Ícone de carrinho" /></a>
+                <a href="#">
+                  <img src={IconCart} alt="Ícone de carrinho" />
+                </a>
               </li>
             </ul>
           </nav>
