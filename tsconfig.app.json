@@ -18,6 +18,12 @@
 
     /* Linting */
     "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
@@ -26,7 +32,8 @@
   },
   "baseUrl": ".",
   "paths": {
-    "~/*": ["src/*"]
+    "~/*": ["src/*"],
+    "@/*": ["src/*"]
   },
   "include": ["src"]
 }
