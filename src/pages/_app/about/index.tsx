@@ -24,7 +24,7 @@ function RouteComponent() {
           Sobre nós
         </h2>
 
-        <p className="text-[#666666] text-lg leading-relaxed mb-5">
+        <p className="text-text-secondary text-lg leading-relaxed mb-5">
           Somos apaixonados por calçados que unem estilo, conforto e
           durabilidade. Nossa missão? Fazer você se sentir bem a cada passo,
           oferecendo uma experiência de compra incrível e uma seleção de tênis,
@@ -33,7 +33,7 @@ function RouteComponent() {
 
         <Link
           to="/our-stores"
-          className="self-start inline-block text-xs font-bold text-[#333333] uppercase border-b-2 tracking-[2.5px] hover:text-accent transition-colors duration-500"
+          className="self-start inline-block text-xs font-bold text-text uppercase border-b-2 tracking-[2.5px] hover:text-accent transition-colors duration-500"
         >
           Saiba mais sobre nossas lojas
         </Link>
