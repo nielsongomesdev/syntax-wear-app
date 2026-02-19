@@ -39,14 +39,14 @@ export const Header = () => {
           </nav>
 
           <nav>
-            <ul className="flex gap-4 md:gap-10 items-center">
+            <ul className="flex gap-4 md:gap-10 items-center justify-end md:justify-center">
               <li className="hidden lg:block">
                 <Link to="/our-stores">Nossas lojas</Link>
               </li>
               <li className="hidden lg:block">
                 <Link to="/about">Sobre</Link>
               </li>
-              <li className="lg:hidden">
+              <li className="lg:hidden flex items-center">
                 <MenuMobile navLinks={navLinks} />
               </li>
               <li className="hidden lg:block">
@@ -54,7 +54,7 @@ export const Header = () => {
                   <img src={IconUser} alt="Ícone de login" />
                 </Link>
               </li>
-              <li>
+              <li className="flex items-center">
                 <CartButton onClick={() => setCartIsOpen(true)} />
               </li>
             </ul>
