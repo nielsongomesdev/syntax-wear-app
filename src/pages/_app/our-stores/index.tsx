@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import OurStoresBanner from "@/assets/images/banner-our-stores.png";
+import OurStoresBanner from "@/assets/images/banner-loja-tech.png";
 import OurStoresImg1 from "@/assets/images/loja-1.png";
 import OurStoresImg2 from "@/assets/images/loja-2.png";
 
@@ -15,7 +15,7 @@ function RouteComponent() {
     <section className="container py-6">
       <img
         src={OurStoresBanner}
-        alt="Banner do interior da loja, com os tênis dispostos"
+        alt="Banner da loja TechStation com equipamentos de setup"
         className="rounded-[20px] h-80 md:h-125 object-cover w-full"
       />
 

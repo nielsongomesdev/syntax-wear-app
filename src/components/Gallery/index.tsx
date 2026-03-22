@@ -1,9 +1,9 @@
-import galeriaHomem from "../../assets/images/galeria-homem.jpg";
-import galeriaTenisRoxo from "../../assets/images/galeria-tenis-roxo.jpg";
-import galeriaModelo from "../../assets/images/galeria-modelo.jpg";
-import galeriaTenisColorido from "../../assets/images/galeria-tenis-colorido.jpg";
-import galeriaTenisBrancoPeto from "../../assets/images/galeria-tenis-branco-e-preto.jpg";
-import galeriaTenisCinza from "../../assets/images/galeria-tenis-cinza.jpg";
+import galeriaTech1 from "../../assets/images/galeria-tech-1.jpg";
+import galeriaTech2 from "../../assets/images/galeria-tech-2.jpg";
+import galeriaTech3 from "../../assets/images/galeria-tech-3.jpg";
+import galeriaTech4 from "../../assets/images/galeria-tech-4.jpg";
+import galeriaTech5 from "../../assets/images/galeria-tech-5.jpg";
+import galeriaTech6 from "../../assets/images/galeria-tech-6.jpg";
 import styles from "./Gallery.module.css";
 import { Overlay } from "../Overlay";
 import { Button } from "../Button";
@@ -20,8 +20,8 @@ export const Gallery = () => {
         >
           <img
             className="w-full h-full object-cover"
-            src={galeriaHomem}
-            alt="Krypton One - Estilo urbano com atitude"
+            src={galeriaTech1}
+            alt="Estação de trabalho premium com setup completo"
           />
 
           <Overlay
@@ -59,8 +59,8 @@ export const Gallery = () => {
         >
           <img
             className="w-full h-full object-cover"
-            src={galeriaTenisRoxo}
-            alt="Tênis Roxo"
+            src={galeriaTech2}
+            alt="Teclado mecânico com iluminação"
           />
         </div>
 
@@ -69,8 +69,8 @@ export const Gallery = () => {
         >
           <img
             className="w-full h-full object-cover"
-            src={galeriaModelo}
-            alt="Modelo Feminina"
+            src={galeriaTech3}
+            alt="Mouse ergonômico em mesa minimalista"
           />
         </div>
 
@@ -79,8 +79,8 @@ export const Gallery = () => {
         >
           <img
             className="w-full h-full object-cover"
-            src={galeriaTenisColorido}
-            alt="Tênis Colorido"
+            src={galeriaTech4}
+            alt="Monitor ultrawide com ambiente de programação"
           />
         </div>
 
@@ -89,8 +89,8 @@ export const Gallery = () => {
         >
           <img
             className="w-full h-full object-cover"
-            src={galeriaTenisBrancoPeto}
-            alt="Tênis Branco e Preto"
+            src={galeriaTech5}
+            alt="Headset e acessórios de áudio para produtividade"
           />
         </div>
 
@@ -99,8 +99,8 @@ export const Gallery = () => {
         >
           <img
             className="w-full h-full object-cover"
-            src={galeriaTenisCinza}
-            alt="Tênis Cinza"
+            src={galeriaTech6}
+            alt="Setup clean com monitor e periféricos"
           />
         </div>
       </div>

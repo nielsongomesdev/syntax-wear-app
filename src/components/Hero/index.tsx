@@ -1,4 +1,4 @@
-import Banner from "@/assets/images/banner.jpg";
+import Banner from "@/assets/images/banner-tech.jpg";
 import { Button } from "../Button";
 import { Overlay } from "../Overlay";
 import { useRouter } from "@tanstack/react-router";
@@ -11,7 +11,7 @@ export const Hero = () => {
       <section className="relative h-125 rounded-[20px] mb-10">
         <img
           src={Banner}
-          alt="Homem sentado com os tênis da TechStation"
+          alt="Setup TechStation com monitor e periféricos"
           className="w-full h-full object-cover rounded-[20px]"
         />
 

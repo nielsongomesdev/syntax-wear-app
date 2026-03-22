@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import bannerAbout from "@/assets/images/about.jpg";
+import bannerAbout from "@/assets/images/about-tech.jpg";
 
 export const Route = createFileRoute("/_app/about/")({
   component: RouteComponent,
@@ -14,7 +14,7 @@ function RouteComponent() {
       <div className="h-100 md:h-full md:w-1/2">
         <img
           src={bannerAbout}
-          alt="Homem sentado com tênis da marca"
+          alt="Profissional em estação de trabalho com equipamentos tech"
           className="size-full object-cover"
         />
       </div>
