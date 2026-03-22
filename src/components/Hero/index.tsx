@@ -11,7 +11,7 @@ export const Hero = () => {
       <section className="relative h-125 rounded-[20px] mb-10">
         <img
           src={Banner}
-          alt="Homem sentado com os tênis da SyntaxWear"
+          alt="Homem sentado com os tênis da TechStation"
           className="w-full h-full object-cover rounded-[20px]"
         />
 

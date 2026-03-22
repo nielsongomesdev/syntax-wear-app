@@ -1,11 +1,11 @@
-import tenisBranco from "@/assets/images/tenis-branco.jpg";
-import tenisCinza from "@/assets/images/tenis-cinza.jpg";
-import tenisColorido from "@/assets/images/tenis-colorido.jpg";
-import tenisFuturista from "@/assets/images/tenis-futurista.jpg";
+import categoryTeclados from "@/assets/images/category-teclados.jpg";
+import categoryMouses from "@/assets/images/category-mouses.jpg";
+import categoryMonitores from "@/assets/images/category-monitores.jpg";
+import categoryAudio from "@/assets/images/category-audio.jpg";
 
 export const categories = [
-  { name: "Casual", image: tenisBranco },
-  { name: "Esporte", image: tenisCinza },
-  { name: "Moderno", image: tenisColorido },
-  { name: "Futurista", image: tenisFuturista },
+  { name: "Teclados", image: categoryTeclados },
+  { name: "Mouses", image: categoryMouses },
+  { name: "Monitores", image: categoryMonitores },
+  { name: "Áudio", image: categoryAudio },
 ];

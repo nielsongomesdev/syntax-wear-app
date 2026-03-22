@@ -1,4 +1,3 @@
-import Logo from "@/assets/images/logo.png";
 import IconUser from "@/assets/images/icon-user.png";
 import { Link } from "@tanstack/react-router";
 import { MenuMobile } from "../MenuMobile";
@@ -25,7 +24,9 @@ export const Header = () => {
       <header className="fixed top-5 left-0 right-0 z-10 mx-10">
         <div className="bg-white text-black max-w-[1320px] mx-auto flex justify-between items-center py-3 px-7 rounded-2xl mt-5">
           <Link to="/">
-            <img src={Logo} alt="Logo SyntaxWear" className="w-32 md:w-36" />
+            <span className="text-2xl md:text-3xl font-extrabold tracking-tight text-black">
+              TechStation
+            </span>
           </Link>
 
           <nav className="hidden lg:block">

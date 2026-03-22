@@ -10,7 +10,7 @@ export interface ProductCart extends Product {
   quantity: number;
 }
 
-const localStorageKey = "@SyntaxWear:cart";
+const localStorageKey = "@TechStation:cart";
 
 export const CartProvider = ({ children }: CartProviderProps) => {
   const [cart, setCart] = useState<ProductCart[]>(() => {

@@ -13,8 +13,8 @@ export const Route = createFileRoute("/_app/products/$productId")({
     );
 
     const title = filteredProduct
-      ? `${filteredProduct.name} - Produtos - SyntaxWear`
-      : "Produto não encontrado - Produtos - SyntaxWear";
+      ? `${filteredProduct.name} - Produtos - TechStation`
+      : "Produto não encontrado - Produtos - TechStation";
 
     return { meta: [{ title }] };
   },

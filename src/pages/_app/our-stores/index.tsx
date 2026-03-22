@@ -6,7 +6,7 @@ import OurStoresImg2 from "@/assets/images/loja-2.png";
 export const Route = createFileRoute("/_app/our-stores/")({
   component: RouteComponent,
   head: () => ({
-    meta: [{ title: "Nossas lojas - SyntaxWear" }],
+    meta: [{ title: "Nossas lojas - TechStation" }],
   }),
 });
 
@@ -23,7 +23,7 @@ function RouteComponent() {
         <h1 className="text-black text-2xl max-w-7xl m-auto my-20 text-center">
           Nossas lojas são o coração da nossa marca. Explore a coleção mais
           recente, experimente seus modelos favoritos e sinta o conforto da
-          SyntaxWear pessoalmente.
+          TechStation pessoalmente.
         </h1>
 
         <section className="text-black w-full space-y-20">
