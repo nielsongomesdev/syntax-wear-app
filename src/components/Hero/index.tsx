@@ -1,4 +1,4 @@
-import Banner from "@/assets/images/banner-tech.jpg";
+import Banner from "@/assets/images/banner-tech.png";
 import { Button } from "../Button";
 import { Overlay } from "../Overlay";
 import { useRouter } from "@tanstack/react-router";
@@ -17,7 +17,7 @@ export const Hero = () => {
 
         <Overlay
           title="Kripton One"
-          subtitle="Transforme qualquer passo em presença"
+          subtitle="Performance extrema para o seu setup."
           className="bottom-0 px-6 md:px-24 pb-24 justify-end md:items-end"
         >
           <Button

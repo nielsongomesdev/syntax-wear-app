@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import bannerAbout from "@/assets/images/about-tech.jpg";
+import bannerAbout from "@/assets/images/about-tech.png";
 
 export const Route = createFileRoute("/_app/about/")({
   component: RouteComponent,
@@ -25,10 +25,10 @@ function RouteComponent() {
         </h2>
 
         <p className="text-text-secondary text-lg leading-relaxed mb-5">
-          Somos apaixonados por calçados que unem estilo, conforto e
-          durabilidade. Nossa missão? Fazer você se sentir bem a cada passo,
-          oferecendo uma experiência de compra incrível e uma seleção de tênis,
-          botas e sapatos para todas as ocasiões.
+          Na TechStation, somos apaixonados por tecnologia e performance. Nosso
+          objetivo é fornecer os melhores equipamentos para desenvolvedores,
+          criadores e entusiastas que buscam elevar o nível de seus setups,
+          unindo design premium e eficiência máxima.
         </p>
 
         <Link

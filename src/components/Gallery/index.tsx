@@ -1,9 +1,9 @@
-import galeriaTech1 from "../../assets/images/galeria-tech-1.jpg";
-import galeriaTech2 from "../../assets/images/galeria-tech-2.jpg";
-import galeriaTech3 from "../../assets/images/galeria-tech-3.jpg";
-import galeriaTech4 from "../../assets/images/galeria-tech-4.jpg";
-import galeriaTech5 from "../../assets/images/galeria-tech-5.jpg";
-import galeriaTech6 from "../../assets/images/galeria-tech-6.jpg";
+import galeriaTech1 from "../../assets/images/galeria-tech-1.png";
+import galeriaTech2 from "../../assets/images/galeria-tech-2.png";
+import galeriaTech3 from "../../assets/images/galeria-tech-3.png";
+import galeriaTech4 from "../../assets/images/galeria-tech-4.png";
+import galeriaTech5 from "../../assets/images/galeria-tech-5.png";
+import galeriaTech6 from "../../assets/images/galeria-tech-6.png";
 import styles from "./Gallery.module.css";
 import { Overlay } from "../Overlay";
 import { Button } from "../Button";
@@ -26,7 +26,7 @@ export const Gallery = () => {
 
           <Overlay
             title="Kripton One"
-            subtitle="Estilo urbano com atitude"
+            subtitle="Design pensado nos mínimos detalhes"
             className="inset-0 justify-center"
           >
             <Button
@@ -34,22 +34,22 @@ export const Gallery = () => {
               onClick={() =>
                 router.navigate({
                   to: "/products/category/$category",
-                  params: { category: "feminino" },
+                  params: { category: "teclados" },
                 })
               }
             >
-              Feminino
+              Ver Teclados
             </Button>
             <Button
               variant="secondary"
               onClick={() =>
                 router.navigate({
                   to: "/products/category/$category",
-                  params: { category: "masculino" },
+                  params: { category: "mouses" },
                 })
               }
             >
-              Masculino
+              Ver Mouses
             </Button>
           </Overlay>
         </div>

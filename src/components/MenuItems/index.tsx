@@ -1,8 +1,24 @@
 const menus = [
-  { title: "Masculino", items: ["Casual", "Esporte", "Moderno", "Futurista"] },
-  { title: "Feminino", items: ["Casual", "Esporte", "Moderno", "Futurista"] },
-  { title: "Outlet", items: ["Masculino", "Feminino"] },
-  { title: "Sobre", items: ["Quem Somos", "Missão"] },
+  {
+    title: "Teclados",
+    items: ["Mecânicos", "Compactos", "Sem fio", "Low Profile"],
+  },
+  {
+    title: "Mouses",
+    items: ["Ergonômicos", "Sem fio", "Alta precisão", "Produtividade"],
+  },
+  {
+    title: "Monitores",
+    items: ["Ultrawide", "4K", "Alta taxa", "Color Accuracy"],
+  },
+  {
+    title: "Áudio",
+    items: ["Headsets", "Microfones", "Speakers", "Noise Cancelling"],
+  },
+  {
+    title: "Setups Completos",
+    items: ["Home Office", "Dev Station", "Creator Desk", "Minimalista"],
+  },
 ];
 
 export const MenuItems = () => {

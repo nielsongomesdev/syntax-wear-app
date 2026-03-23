@@ -1,7 +1,9 @@
 export const SubscriptionForm = () => {
   return (
     <form className="flex flex-col">
-      <label htmlFor="newsletter">Inscreva-se em nosso e-mail</label>
+      <label htmlFor="newsletter">
+        Fique por dentro das novidades de hardware e ofertas exclusivas.
+      </label>
       <input
         type="email"
         id="newsletter"

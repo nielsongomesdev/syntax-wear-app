@@ -22,8 +22,8 @@ function RouteComponent() {
       <div>
         <h1 className="text-black text-2xl max-w-7xl m-auto my-20 text-center">
           Nossas lojas são o coração da nossa marca. Explore a coleção mais
-          recente, experimente seus modelos favoritos e sinta o conforto da
-          TechStation pessoalmente.
+          recente de hardwares, teste a performance dos equipamentos e sinta a
+          qualidade da TechStation pessoalmente.
         </h1>
 
         <section className="text-black w-full space-y-20">
@@ -33,7 +33,7 @@ function RouteComponent() {
 
               <p>
                 Descubra os lançamentos da temporada antes de todo mundo e
-                experimente nossos estilos mais recentes de perto.
+                experimente nossos setups mais recentes de perto.
               </p>
             </div>
 
@@ -55,8 +55,9 @@ function RouteComponent() {
               <h2 className="text-3xl mb-5">Atendimento Sob Medida</h2>
 
               <p>
-                Conte com dicas de estilo, sugestões exclusivas e suporte
-                personalizado de quem realmente entende de moda.
+                Conte com dicas de especialistas, sugestões de upgrade
+                exclusivas e suporte personalizado de quem realmente entende de
+                tecnologia e performance.
               </p>
             </div>
           </div>
