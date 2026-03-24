@@ -1,126 +1,99 @@
-# Syntax Wear
+# TechStation E-commerce
 
-Uma aplicação de e-commerce para venda de vestuário desenvolvida com React, TypeScript e Tailwind CSS. O projeto oferece uma experiência completa de compra com carrinho, autenticação de usuários e catálogo de produtos.
+Projeto de e-commerce com foco em produtos de tecnologia, desenvolvido com React, TypeScript e Tailwind CSS.
 
-## 🎯 Sobre o Projeto
+## Sobre o projeto
 
-Syntax Wear é uma loja online moderna que permite aos usuários:
-- **Navegar por produtos** organizados por categorias
-- **Visualizar detalhes** de cada produto
-- **Gerenciar o carrinho** de compras
-- **Realizar login e cadastro** de conta
-- **Pesquisar endereços** via CEP
-- **Validar dados** com formulários seguros
+A TechStation é uma vitrine de produtos para setup e produtividade, com fluxo completo de navegação entre home, categorias, listagem, detalhe e carrinho.
 
-## 🛠️ Tecnologias Utilizadas
+Principais recursos:
+- Catálogo de produtos por categoria.
+- Página de detalhe com cálculo de frete por CEP.
+- Carrinho com incremento/decremento de quantidade.
+- Persistência do carrinho no navegador com localStorage.
+- Páginas de autenticação (login e cadastro) com validação de formulário.
 
-- **React 19** - Biblioteca UI
-- **TypeScript** - Linguagem tipada
-- **Vite** - Bundler rápido
-- **TanStack React Router** - Roteamento de páginas
-- **Tailwind CSS** - Estilos CSS utilitários
-- **React Hook Form** - Gerenciamento de formulários
-- **Zod** - Validação de dados
-- **React Icons** - Ícones SVG
+## Stack
 
-## 📁 Estrutura do Projeto
+- React 19
+- TypeScript
+- Vite
+- TanStack Router (file-based routes)
+- Tailwind CSS v4
+- React Hook Form
+- Zod
+- React Icons
 
-```
+## Estrutura do projeto
+
+```text
 src/
-├── components/        # Componentes React reutilizáveis
-├── pages/            # Páginas da aplicação
-├── contexts/         # Context API para estado global
-├── router/           # Configuração de rotas
-├── styles/           # Estilos globais
-├── utils/            # Funções utilitárias
-├── mocks/            # Dados mock para desenvolvimento
-├── interfaces/       # Tipagens TypeScript
-└── assets/           # Imagens e fontes
+	assets/        # Fontes e imagens
+	components/    # Componentes reutilizáveis de UI
+	contexts/      # Estado global do carrinho
+	interfaces/    # Tipagens TypeScript
+	mocks/         # Dados mockados de produtos e categorias
+	pages/         # Rotas e páginas da aplicação
+	router/        # Árvore de rotas gerada
+	styles/        # Estilos globais
+	utils/         # Utilitários (formatação, validações)
 ```
 
-## 🚀 Como Rodar
+## Rotas principais
 
-### Pré-requisitos
+- `/` Home
+- `/products` Lista de produtos
+- `/products/category/$category` Lista por categoria
+- `/products/$productId` Detalhe do produto
+- `/about` Sobre
+- `/our-stores` Nossas lojas
+- `/sign-in` Login
+- `/sign-up` Cadastro
 
-- **Node.js** (v18 ou superior)
-- **npm** ou **yarn**
+## Como executar
 
-### Instalação
+Pré-requisitos:
+- Node.js 18+
+- npm 9+
 
-1. Clone o repositório:
+Instalação:
+
 ```bash
-git clone <url-do-repositorio>
-cd syntax-wear-app
-```
-
-2. Instale as dependências:
-```bash
+git clone https://github.com/nielsongomesdev/techstation-ecommerce.git
+cd techstation-ecommerce
 npm install
 ```
 
-### Desenvolvimento
+Ambiente de desenvolvimento:
 
-Para iniciar o servidor de desenvolvimento:
 ```bash
 npm run dev
 ```
 
-A aplicação abrirá automaticamente em `http://localhost:5173`
+Build de produção:
 
-### Build para Produção
-
-Para gerar o build otimizado:
 ```bash
 npm run build
 ```
 
-Os arquivos compilados serão gerados na pasta `dist/`
+Preview local do build:
 
-### Preview do Build
-
-Para visualizar o build antes de fazer deploy:
 ```bash
 npm run preview
 ```
 
-### Linting
+Lint:
 
-Para verificar qualidade do código com ESLint:
 ```bash
-npm lint
+npm run lint
 ```
 
-## 📦 Scripts Disponíveis
+## Scripts
 
 | Comando | Descrição |
-|---------|-----------|
-| `npm run dev` | Inicia servidor de desenvolvimento |
-| `npm run build` | Compila a aplicação para produção |
-| `npm run preview` | Visualiza o build localmente |
-| `npm run lint` | Checa qualidade do código |
+| --- | --- |
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Gera build de produção |
+| `npm run preview` | Sobe preview do build |
+| `npm run lint` | Executa ESLint |
 
-## 🎨 Componentes Principais
-
-- **Header** - Cabeçalho com logo e navegação
-- **Hero** - Seção principal de destaque
-- **ProductList** - Lista de produtos
-- **ProductCard** - Card individual do produto
-- **CartButton/CartDrawer** - Carrinho de compras
-- **LoginForm/RegisterForm** - Autenticação
-- **Gallery** - Galeria de imagens
-- **Footer** - Rodapé com informações
-
-## 🔐 Recursos de Validação
-
-- Validação de CPF
-- Validação de endereço via CEP
-- Validação de emails e senhas
-- Formatação de valores monetários
-
-## 📝 Licença
-
-Todos os direitos reservados.
-
----
-
-Desenvolvido com ❤️ usando React e TypeScript
