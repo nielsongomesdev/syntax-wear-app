@@ -3,6 +3,7 @@ import type { Product } from "../../interfaces/product";
 import { MdAddShoppingCart } from "react-icons/md";
 import { CartContext } from "../../contexts/CartContext";
 import { useContext } from "react";
+import { formatCurrency } from "../../utils/format-currency";
 
 interface ProductCardProps {
   product: Product;
@@ -21,7 +22,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <div className="aspect-4/3 p-4 flex items-center justify-center">
           <img
             className="w-full h-full object-contain"
-            src={product.image}
+            src={product.images[0]}
             alt={product.name}
             loading="lazy"
             decoding="async"
@@ -32,10 +33,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       <div className="text-black p-4 flex flex-col flex-1">
         <h3 className="text-lg font-semibold min-h-16">{product.name}</h3>
 
-        <p className="mb-2">{product.color}</p>
+        <p className="mb-2">{product.colors[0]}</p>
 
         <div className="flex justify-between mt-auto">
-          <p className="font-bold">R${product.price},00</p>
+          <p className="font-bold">{formatCurrency(product.price)}</p>
 
           <button className="cursor-pointer" onClick={() => addToCart(product)}>
             <MdAddShoppingCart className="h-7 w-7" />

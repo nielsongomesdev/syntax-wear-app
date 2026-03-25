@@ -46,7 +46,7 @@ export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
                 <div className="flex gap-4">
                   <div className="w-24 h-24 md:w-32 md:h-32 bg-surface rounded-md p-2 flex items-center justify-center shrink-0">
                     <img
-                      src={product.image}
+                      src={product.images[0]}
                       alt={product.name}
                       className="w-full h-full object-contain"
                       loading="lazy"
