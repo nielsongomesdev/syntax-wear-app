@@ -12,7 +12,7 @@ export const RegisterForm = () => {
 
   const navigate = useNavigate();
 
-  async function handleRegisterUser(data: RegisterFormData) {
+    async function handleRegisterUser(data: RegisterFormData) {
     const { confirmPassword, ...dataWithoutConfirmPassword } = data;
 
     setError(null);
