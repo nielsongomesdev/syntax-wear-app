@@ -1,33 +1,33 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { RegisterForm } from "../../components/RegisterForm";
 import { Logo } from "../../components/Logo";
 import { Separator } from "../../components/Separator";
-import GoogleIcon from "@/assets/images/google-icon.png";
+import { GoogleAuthButton } from "../../components/GoogleAuthButton";
 
 export const Route = createFileRoute("/_auth/sign-up")({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      { title: "Cadastre-se - TechStation" }
+    ]
+  })
 });
 
 function RouteComponent() {
   return (
     <section className="min-h-screen w-full flex justify-center items-center bg-surface p-5">
-      <div className="w-full max-w-112.5 bg-white rounded-2xl p-5 flex flex-col">
+      <div className="w-[450px] bg-white  rounded-2xl p-5 flex flex-col">
         <Logo />
         <RegisterForm />
         <Separator />
 
-        <button className="w-full flex items-center justify-center gap-2 border border-border rounded-md py-3 hover:bg-gray-50 transition cursor-pointer">
-          <img src={GoogleIcon} className="w-5 h-5" />
-          <span className="text-sm font-medium text-black">
-            Continuar com Google
-          </span>
-        </button>
+         <GoogleAuthButton />
 
         <p className="text-sm text-gray-600 mt-6 text-center">
-          Já tem uma conta?{" "}
-          <Link to="/sign-in" className="text-accent hover:underline">
+          Já tem uma conta? { " " }
+          <a href="/sign-in" className="text-accent hover:underline">
             Entrar
-          </Link>
+          </a>
         </p>
       </div>
     </section>

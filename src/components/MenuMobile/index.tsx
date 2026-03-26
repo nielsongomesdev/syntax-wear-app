@@ -5,6 +5,8 @@ import { FaRegUserCircle } from "react-icons/fa";
 
 import type { NavLink } from "../Header";
 import { IoMdClose } from "react-icons/io";
+import { useAuth } from "../../contexts/AuthContext/AuthContext";
+import { PiSignOutLight } from "react-icons/pi";
 
 interface MenuMobileProps {
   navLinks: NavLink[];
@@ -12,6 +14,16 @@ interface MenuMobileProps {
 
 export const MenuMobile = ({ navLinks }: MenuMobileProps) => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
+
+  const { isAuthenticated, user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+    } catch (error) {
+      console.error("Erro ao fazer sign out:", error);
+    }
+  };
 
   return (
     <>
@@ -36,12 +48,11 @@ export const MenuMobile = ({ navLinks }: MenuMobileProps) => {
             <nav className="flex justify-between">
               <Link to="/sign-in" className="flex items-center gap-3">
                 <FaRegUserCircle className="h-6 w-6" />
-                <p>Olá! Faça seu login</p>
+                
+                { isAuthenticated ? <p>Olá, {user?.firstName}</p> : <p>Olá! Faça seu login</p> }
+                
               </Link>
-              <IoMdClose
-                className="cursor-pointer text-2xl"
-                onClick={() => setMenuIsOpen(!menuIsOpen)}
-              />
+              <IoMdClose className="cursor-pointer text-2xl" onClick={() => setMenuIsOpen(!menuIsOpen)} />
             </nav>
           </header>
 
@@ -57,15 +68,22 @@ export const MenuMobile = ({ navLinks }: MenuMobileProps) => {
             ))}
 
             <li>
-              <Link to="/our-stores" onClick={() => setMenuIsOpen(!menuIsOpen)}>
-                Nossas lojas
-              </Link>
+              <Link to="/our-stores" onClick={() => setMenuIsOpen(!menuIsOpen)}>Nossas lojas</Link>
             </li>
             <li>
-              <Link to="/about" onClick={() => setMenuIsOpen(!menuIsOpen)}>
-                Sobre
-              </Link>
+              <Link to="/about" onClick={() => setMenuIsOpen(!menuIsOpen)}>Sobre</Link>
             </li>
+
+            { 
+              isAuthenticated && (
+                <li>
+                  <button onClick={handleSignOut} className="cursor-pointer hover:opacity-70 transition-opacity flex items-center gap-2">
+                    Sair
+                    <PiSignOutLight className="w-6 h-6"></PiSignOutLight>
+                  </button>
+                </li>
+              )
+            }
           </ul>
         </div>
       </div>

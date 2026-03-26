@@ -29,9 +29,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         const data = await response.json();
         setUser(data.user);
         setIsAuthenticated(true);
-      
+
         console.log(data.user);
-        
       } catch (error) {
         console.error("Erro ao buscar perfil do usuário:", error);
         setUser(null);
@@ -65,7 +64,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   async function register(data: RegisterInput): Promise<void> {
     const response = await fetch("http://localhost:3000/auth/register", {
       method: "POST",
-      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
@@ -87,7 +85,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       await fetch("http://localhost:3000/auth/signout", {
         method: "POST",
         credentials: "include", // faz com que os cookies sejam enviados junto com a requisição
-      })
+      });
 
       setUser(null);
       setIsAuthenticated(false);
@@ -102,14 +100,14 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       credentials: "include", // faz com que os cookies sejam enviados junto com a requisição
       headers: {
         "Content-Type": "application/json",
-       },
+      },
       body: JSON.stringify({ credential }),
     });
 
     const result = await response.json();
 
     console.log("result:", result);
-    
+
     if (!response.ok || !result.user) {
       throw new Error(result.message || "Erro ao fazer login com Google");
     }
@@ -124,7 +122,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     signIn,
     register,
     signOut,
-    signInWithGoogle
+    signInWithGoogle,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

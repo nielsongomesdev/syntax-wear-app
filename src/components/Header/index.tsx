@@ -1,10 +1,12 @@
+import Logo from "@/assets/images/logo.png";
 import IconUser from "@/assets/images/icon-user.png";
-import LogoImage from "@/assets/images/logo.png";
 import { Link } from "@tanstack/react-router";
 import { MenuMobile } from "../MenuMobile";
 import { CartButton } from "../CartButton";
 import { CartDrawer } from "../CartDrawer";
 import { useState } from "react";
+import { useAuth } from "../../contexts/AuthContext/AuthContext";
+import { PiSignOutLight } from "react-icons/pi";
 
 export interface NavLink {
   name: string;
@@ -19,6 +21,16 @@ const navLinks: NavLink[] = [
 
 export const Header = () => {
   const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
+  const { isAuthenticated, signOut } = useAuth();
+  
+  const handleSignOut = async () => {
+        try {
+      await signOut();
+    } catch (error) {
+      console.error("Erro ao fazer sign out:", error);
+    }
+  }
+
 
   return (
     <div className="relative">
@@ -30,8 +42,8 @@ export const Header = () => {
               aria-label="Logo TechStation"
               className="block h-10 w-36 bg-primary"
               style={{
-                WebkitMaskImage: `url(${LogoImage})`,
-                maskImage: `url(${LogoImage})`,
+                WebkitMaskImage: `url(${Logo})`,
+                maskImage: `url(${Logo})`,
                 WebkitMaskRepeat: "no-repeat",
                 maskRepeat: "no-repeat",
                 WebkitMaskPosition: "center",
@@ -42,14 +54,10 @@ export const Header = () => {
             />
           </Link>
 
-          <nav className="hidden lg:block">
+            <nav className="hidden lg:block">
             <ul className="flex gap-10">
               {navLinks.map((link) => (
-                <Link
-                  to={link.href}
-                  key={link.name}
-                  className="transition-colors hover:text-primary"
-                >
+                <Link to={link.href} key={link.name}>
                   {link.name}
                 </Link>
               ))}
@@ -57,29 +65,32 @@ export const Header = () => {
           </nav>
 
           <nav>
-            <ul className="flex gap-4 md:gap-10 items-center justify-end md:justify-center">
+            <ul className="flex gap-4 md:gap-10 items-center">
               <li className="hidden lg:block">
-                <Link
-                  to="/our-stores"
-                  className="transition-colors hover:text-primary"
-                >
-                  Nossas lojas
-                </Link>
+                <Link to="/our-stores">Nossas lojas</Link>
               </li>
               <li className="hidden lg:block">
-                <Link to="/about" className="transition-colors hover:text-primary">
-                  Sobre
-                </Link>
+                <Link to="/about">Sobre</Link>
               </li>
-              <li className="lg:hidden flex items-center">
+              <li className="lg:hidden">
                 <MenuMobile navLinks={navLinks} />
               </li>
               <li className="hidden lg:block">
-                <Link to="/sign-up">
-                  <img src={IconUser} alt="Ícone de login" />
-                </Link>
+                {isAuthenticated ? (
+                  <button
+                    onClick={handleSignOut}
+                    className="cursor-pointer hover:opacity-70 transition-opacity flex items-center gap-2"
+                  >
+                    Sair
+                    <PiSignOutLight className="w-6 h-6"></PiSignOutLight>
+                  </button>
+                ) : (
+                  <Link to="/sign-up">
+                    <img src={IconUser} alt="Ícone de login" />
+                  </Link>
+                )}
               </li>
-              <li className="flex items-center">
+              <li>
                 <CartButton onClick={() => setCartIsOpen(true)} />
               </li>
             </ul>
