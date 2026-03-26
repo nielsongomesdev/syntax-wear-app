@@ -1,10 +1,39 @@
-import { useRegisterForm } from "./register-form.schema";
+import { useNavigate } from "@tanstack/react-router";
+import { useAuth } from "../../contexts/AuthContext/AuthContext";
+import { useRegisterForm, type RegisterFormData } from "./register-form.schema";
+import { useState } from "react";
 
 export const RegisterForm = () => {
-  const { register, errors, isSubmitting } = useRegisterForm();
+  const [error, setError] = useState<string | null>(null);
+
+  const { register, errors, isSubmitting, handleSubmit } = useRegisterForm();
+
+  const { signUp } = useAuth();
+
+  const navigate = useNavigate();
+
+  async function handleRegisterUser(data: RegisterFormData) {
+    const { confirmPassword, ...dataWithoutConfirmPassword } = data;
+
+    setError(null);
+
+    try {
+      await signUp(dataWithoutConfirmPassword);
+      navigate({ to: "/" });
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error("Erro ao registrar usuário:", error.message);
+        setError(error.message);
+      } else {
+        console.error("Erro ao registrar usuário");
+        setError("Erro ao registrar usuário");
+      }
+    }
+  }
 
   return (
-    <form className="text-black">
+    <form className="text-black" onSubmit={handleSubmit(handleRegisterUser)}>
+      {/* Campo de e-mail */}
       <div>
         <label className="text-xs text-gray-600">E-mail*</label>
         <input
@@ -18,6 +47,7 @@ export const RegisterForm = () => {
         )}
       </div>
 
+      {/* Campo de senha */}
       <div>
         <label className="text-xs text-gray-600">Senha*</label>
         <input
@@ -31,6 +61,7 @@ export const RegisterForm = () => {
         )}
       </div>
 
+      {/* Campo de confirmar senha */}
       <div>
         <label className="text-xs text-gray-600">Confirmar senha*</label>
         <input
@@ -46,6 +77,7 @@ export const RegisterForm = () => {
         )}
       </div>
 
+      {/* Campo de nome */}
       <div>
         <label className="text-xs text-gray-600">Nome*</label>
         <input
@@ -55,12 +87,11 @@ export const RegisterForm = () => {
         />
 
         {errors.firstName && (
-          <p className="text-xs text-error mt-1">
-            {errors.firstName.message}
-          </p>
+          <p className="text-xs text-error mt-1">{errors.firstName.message}</p>
         )}
       </div>
 
+      {/* Campo de sobrenome */}
       <div>
         <label className="text-xs text-gray-600">Sobrenome*</label>
         <input
@@ -74,6 +105,7 @@ export const RegisterForm = () => {
         )}
       </div>
 
+      {/* Campo de CPF */}
       <div>
         <label className="text-xs text-gray-600">CPF*</label>
         <input
@@ -87,6 +119,7 @@ export const RegisterForm = () => {
         )}
       </div>
 
+      {/* Campo de data de nascimento */}
       <div>
         <label className="text-xs text-gray-600">Data de nascimento</label>
         <input
@@ -96,12 +129,11 @@ export const RegisterForm = () => {
         />
 
         {errors.birthDate && (
-          <p className="text-xs text-error mt-1">
-            {errors.birthDate.message}
-          </p>
+          <p className="text-xs text-error mt-1">{errors.birthDate.message}</p>
         )}
       </div>
 
+      {/* Campo de celular */}
       <div>
         <label className="text-xs text-gray-600">Telefone*</label>
         <input
@@ -121,6 +153,9 @@ export const RegisterForm = () => {
       >
         {isSubmitting ? "Enviando..." : "Continuar"}
       </button>
+
+      { error && <p className="text-red-500 text-sm text-center mt-4">{error}</p> }
+
     </form>
   );
 };

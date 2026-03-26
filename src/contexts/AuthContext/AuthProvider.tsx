@@ -61,7 +61,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     setIsAuthenticated(true);
   }
 
-  async function register(data: RegisterInput): Promise<void> {
+  async function signUp(data: RegisterInput): Promise<void> {
     const response = await fetch("http://localhost:3000/auth/register", {
       method: "POST",
       headers: {
@@ -120,7 +120,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     user,
     isAuthenticated,
     signIn,
-    register,
+    signUp,
     signOut,
     signInWithGoogle,
   };
