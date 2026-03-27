@@ -57,7 +57,11 @@ export const Header = () => {
             <nav className="hidden lg:block">
             <ul className="flex gap-10">
               {navLinks.map((link) => (
-                <Link to={link.href} key={link.name}>
+                <Link
+                  to={link.href}
+                  key={link.name}
+                  className="transition-colors hover:text-accent"
+                >
                   {link.name}
                 </Link>
               ))}
@@ -67,12 +71,16 @@ export const Header = () => {
           <nav>
             <ul className="flex gap-4 md:gap-10 items-center">
               <li className="hidden lg:block">
-                <Link to="/our-stores">Nossas lojas</Link>
+                <Link to="/our-stores" className="transition-colors hover:text-accent">
+                  Nossas lojas
+                </Link>
               </li>
               <li className="hidden lg:block">
-                <Link to="/about">Sobre</Link>
+                <Link to="/about" className="transition-colors hover:text-accent">
+                  Sobre
+                </Link>
               </li>
-              <li className="lg:hidden">
+              <li className="lg:hidden flex items-center">
                 <MenuMobile navLinks={navLinks} />
               </li>
               <li className="hidden lg:block">
@@ -90,7 +98,7 @@ export const Header = () => {
                   </Link>
                 )}
               </li>
-              <li>
+              <li className="flex items-center">
                 <CartButton onClick={() => setCartIsOpen(true)} />
               </li>
             </ul>

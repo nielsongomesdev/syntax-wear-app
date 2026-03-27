@@ -28,10 +28,10 @@ export const MenuMobile = ({ navLinks }: MenuMobileProps) => {
   return (
     <>
       <button
-        className="cursor-pointer"
+        className="cursor-pointer flex items-center justify-center w-6 h-6"
         onClick={() => setMenuIsOpen(!menuIsOpen)}
       >
-        <img src={IconMenu} alt="Ícone menu" />
+        <img src={IconMenu} alt="Ícone menu" className="block w-5 h-5 object-contain" />
       </button>
 
       {/* { Overlay } */}
