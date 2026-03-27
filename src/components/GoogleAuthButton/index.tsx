@@ -47,15 +47,14 @@ export const GoogleAuthButton = () => {
   };
 
   return (
-    <>
-      <GoogleLogin
-        onSuccess={handleGoogleSuccess}
-        onError={handleGoogleError}
-      />
+    <div className="flex flex-col items-center w-full">
+      <div className="w-full flex justify-center">
+        <GoogleLogin onSuccess={handleGoogleSuccess} onError={handleGoogleError} />
+      </div>
 
       {googleError && (
         <p className="mt-3.5 text-red-600 text-center">{googleError}</p>
       )}
-    </>
+    </div>
   );
 };
