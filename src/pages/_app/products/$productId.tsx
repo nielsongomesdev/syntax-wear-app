@@ -59,14 +59,14 @@ function RouteComponent() {
         <span className="font-semibold">{product?.name}</span>
       </nav>
 
-      <div className="flex justify-center items-start gap-10">
+      <div className="flex flex-col md:flex-row justify-center items-start gap-10">
         <img
           src={product?.images[0]}
           alt={product?.name}
-          className="w-125 h-auto object-contain bg-white rounded-2xl self-start"
+          className="w-full md:w-125 max-w-full md:max-w-125 h-auto object-contain bg-white rounded-2xl self-start"
         />
 
-        <div className="text-black">
+        <div className="text-black w-full md:w-auto md:pl-4">
           <h1 className="text-4xl font-bold mb-1">{product?.name}</h1>
 
           <p className="mb-2">Cor: {product?.color}</p>
@@ -90,7 +90,7 @@ function RouteComponent() {
             </span>
           </p>
 
-          <p className="max-w-125 my-5">{product?.description}</p>
+          <p className="max-w-full md:max-w-125 my-5">{product?.description}</p>
 
           <div className="mb-6">
             <p className="text-sm">Calcular o prazo de entrega</p>
