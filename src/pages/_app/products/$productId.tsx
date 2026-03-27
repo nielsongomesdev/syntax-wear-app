@@ -59,11 +59,11 @@ function RouteComponent() {
         <span className="font-semibold">{product?.name}</span>
       </nav>
 
-      <div className="flex justify-center gap-10">
+      <div className="flex justify-center items-start gap-10">
         <img
           src={product?.images[0]}
           alt={product?.name}
-          className="w-125 bg-white rounded-2xl"
+          className="w-125 h-auto object-contain bg-white rounded-2xl self-start"
         />
 
         <div className="text-black">
